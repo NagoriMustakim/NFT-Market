@@ -4,7 +4,6 @@ const fs = require("fs");
 
 async function main() {
   const [deployer] = await ethers.getSigners();
-  const balance = await deployer.getBalance();
   const Marketplace = await hre.ethers.getContractFactory("NFTMarketplace");
   const marketplace = await Marketplace.deploy();
 
@@ -16,6 +15,7 @@ async function main() {
   }
 
   //This writes the ABI and address to the mktplace.json
+  console.log(`Address: ${marketplace.address}`)
   fs.writeFileSync('./src/Marketplace.json', JSON.stringify(data))
 }
 

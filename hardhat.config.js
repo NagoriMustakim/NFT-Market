@@ -14,20 +14,16 @@ task("accounts", "Prints the list of accounts", async (taskArgs, hre) => {
 module.exports = {
   defaultNetwork: "hardhat",
   networks: {
-    hardhat: {
+    localhost: {
       chainId: 1337
     },
     mumbai: {
-      url: `https://polygon-mumbai.g.alchemy.com/v2/nAhiCHKvZkhkp4A7PkkCIBON0-BXW26d`,
-      //accounts: [process.env.privateKey]
-    },
-    matic: {
-      url: "https://polygon-mainnet.g.alchemy.com/v2/nAhiCHKvZkhkp4A7PkkCIBON0-BXW26d",
-      //accounts: [process.env.privateKey]
+      url: 'https://polygon-mumbai.g.alchemy.com/v2/YOUR_API_KEY',
+      accounts: ['YOUR_PRIVATE_KEY']
     },
     goerli: {
-      url: process.env.REACT_APP_ALCHEMY_API_URL,
-      accounts: [ process.env.REACT_APP_PRIVATE_KEY ]
+      url: 'https://eth-goerli.g.alchemy.com/v2/YOUR_API_KEY',
+      accounts: ['YOUR_PRIVATE_KEY']
     }
   },
   solidity: {
